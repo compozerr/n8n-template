@@ -1,0 +1,21 @@
+{
+    "name": "base",
+    "private": true,
+    "scripts": {
+        "build": "turbo build",
+        "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+        "install:dep": "(npm list -g tsx || npm install -g tsx) > /dev/null 2>&1 && tsx scripts/install.ts",
+        "dev": "deno run --allow-all scripts/dev.ts",
+        "serve": "deno run --allow-all scripts/serve.ts",
+        "deploy": "compozerr deploy project"
+    },
+    "devDependencies": {
+        "prettier": "^3.2.5",
+        "turbo": "^2.3.0",
+        "typescript": "5.5.4"
+    },
+    "engines": {
+        "node": ">=18"
+    },
+    "packageManager": "npm@10.8.2"
+}

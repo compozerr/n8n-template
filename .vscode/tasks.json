@@ -1,0 +1,52 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run npm run dev",
+            "type": "shell",
+            "command": "npm run dev",
+            "isBackground": true,
+            "problemMatcher": {
+                "owner": "custom",
+                "pattern": [
+                    {
+                        "regexp": ".",
+                        "file": 1,
+                        "location": 2,
+                        "severity": 3,
+                        "code": 4,
+                        "message": 5
+                    }
+                ],
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": "Starting services...",
+                    "endsPattern": "All services are ready"
+                }
+            },
+            "options": {
+                "cwd": "${workspaceFolder}"
+            }
+        },
+        {
+            "label": "Terminate All Tasks",
+            "type": "shell",
+            "windows": {
+                "command": "wsl -e kill -SIGINT $(wsl -e pgrep -f 'deno.*dev.ts')",
+                "options": {
+                    "shell": {
+                        "executable": "cmd.exe",
+                        "args": ["/c"]
+                    }
+                }
+            },
+            "linux": {
+                "command": "kill -SIGINT $(pgrep -f 'deno.*dev.ts')"
+            },
+            "osx": {
+                "command": "kill -SIGINT $(pgrep -f 'deno.*dev.ts')"
+            },
+            "problemMatcher": []
+        }
+    ]
+}

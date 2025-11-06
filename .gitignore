@@ -1,0 +1,12 @@
+.DS_Store
+*.local
+*.log*
+
+bin
+obj
+node_modules
+dist
+
+.turbo
+.env
+service-account.json

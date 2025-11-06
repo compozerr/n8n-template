@@ -1,0 +1,26 @@
+services:
+  n8n:
+    image: n8nio/n8n:latest
+    container_name: n8n
+    restart: unless-stopped
+    ports:
+      - "1234:1234"
+    environment:
+      - N8N_BASIC_AUTH_ACTIVE=false
+      - N8N_HOST=localhost
+      - N8N_PORT=1234
+      - N8N_PROTOCOL=http
+      - NODE_ENV=production
+      - GENERIC_TIMEZONE=Europe/Berlin
+      - DB_TYPE=sqlite
+      - DB_SQLITE_VACUUM_ON_STARTUP=true
+      - N8N_EDITOR_BASE_URL={N8N_BASE_URL}
+      - N8N_PUBLIC_API=false
+      - N8N_ALLOW_CUSTOM_API_ENDPOINT=false
+      - N8N_API_PATH=/rest
+      - N8N_DISABLE_PRODUCTION_MAIN_PROCESS_WARNING=true
+    volumes:
+      - n8n_data:/home/node/.n8n
+
+volumes:
+  n8n_data:

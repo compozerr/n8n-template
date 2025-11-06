@@ -1,0 +1,86 @@
+{
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "project",
+        "module"
+      ]
+    },
+    "name": {
+      "type": "string"
+    },
+    "dependencies": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "start": {
+      "type": "string"
+    },
+    "startupTimeoutMs": {
+      "type": "number"
+    },
+    "readyMessage": {
+      "type": "string"
+    },
+    "end": {
+      "type": "string"
+    },
+    "port": {
+      "type": "string"
+    },
+    "backend": {
+      "type": "object",
+      "properties": {
+        "defaultEnvProperties": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "frontend": {
+      "type": "object",
+      "properties": {
+        "srcDir": {
+          "type": "string",
+          "default": "frontend/src"
+        },
+        "routesDir": {
+          "type": "string"
+        },
+        "routePrefix": {
+          "type": "string"
+        },
+        "defaultEnvProperties": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false,
+      "default": {
+        "alias": "@/*",
+        "srcDir": "frontend/src"
+      }
+    },
+    "dockerComposeFile": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "type",
+    "name"
+  ],
+  "additionalProperties": false,
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

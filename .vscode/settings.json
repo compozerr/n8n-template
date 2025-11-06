@@ -1,0 +1,17 @@
+{
+    "files.watcherExclude": {
+        "**/routeTree.gen.ts": true
+    },
+    "search.exclude": {
+        "**/routeTree.gen.ts": true
+    },
+    "files.readonlyInclude": {
+        "**/routeTree.gen.ts": true
+    },
+    "json.schemas": [
+        {
+            "fileMatch": ["compozerr.json"],
+            "url": "./compozerr.schema.json"
+        }
+    ]
+}
