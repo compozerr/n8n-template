@@ -1,7 +1,0 @@
-{
-    "backend": {
-        "defaultEnvProperties": {
-            "N8N_BASE_URL": "https://n8n.example.com/"
-        }
-    }
-}
