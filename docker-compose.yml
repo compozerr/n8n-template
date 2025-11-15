@@ -14,7 +14,7 @@ services:
       - GENERIC_TIMEZONE=Europe/Berlin
       - DB_TYPE=sqlite
       - DB_SQLITE_VACUUM_ON_STARTUP=true
-      - N8N_EDITOR_BASE_URL={FRONTEND_URL}
+      - N8N_EDITOR_BASE_URL=${FRONTEND_URL}
       - N8N_PUBLIC_API=false
       - N8N_ALLOW_CUSTOM_API_ENDPOINT=false
       - N8N_API_PATH=/rest
