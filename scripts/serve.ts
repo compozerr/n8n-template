@@ -20,7 +20,7 @@ if (!Deno.args.includes("--no-build")) {
 }
 
 const commandFlags = `-f ${dockerComposeFiles.join(" -f ")}`
-const upCommand = `${moduleComposeContextsEnvironmentVars} docker-compose ${commandFlags} up${Deno.args.includes("--no-build") ? "" : " --build"}${Deno.args.includes("-d") ? " -d" : ""}`;
+const upCommand = `${moduleComposeContextsEnvironmentVars} docker-compose ${commandFlags} up --pull always${Deno.args.includes("--no-build") ? "" : " --build"}${Deno.args.includes("-d") ? " -d" : ""}`;
 
 console.log({ upCommand })
 
